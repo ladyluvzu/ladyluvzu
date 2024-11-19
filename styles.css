@@ -1,0 +1,225 @@
+/* General Reset */
+body {
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+    background: url('background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #d3d3d3; /* Terminal-style gray text */
+    overflow-x: hidden;
+    cursor: url('cursor.cur'), auto;
+  }
+  
+  /* Custom Scrollbar */
+  body::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background: #f4c2d8; /* Washed-out pink thumb */
+    border-radius: 0; /* Boxy scrollbar */
+  }
+  
+  body::-webkit-scrollbar-track {
+    background: #202020; /* Dark track */
+  }
+  
+  /* Header */
+  header {
+    text-align: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.9); /* Solid black for terminal vibe */
+    border-bottom: 3px solid #e6ccd1; /* Washed-out pink border */
+    margin-bottom: 10px;
+  }
+  
+  .profile-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .profile-pic {
+    border: 3px solid #e6ccd1; /* Washed-out pink */
+    border-radius: 0; /* Boxy profile picture */
+    width: 150px;
+    height: 150px;
+  }
+  
+  .bio h1 {
+    color: #f4c2d8; /* Important pink for the name */
+    margin-bottom: 10px;
+  }
+  
+  .bio p {
+    color: #d3d3d3; /* Terminal-style text */
+  }
+  
+  /* Blog Section */
+  .blog {
+    padding: 20px;
+    text-align: left;
+    background: rgba(0, 0, 0, 0.9); /* Terminal-style panel */
+    border: 3px solid #e6ccd1;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 800px;
+  }
+  
+  .blog-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .blog-image {
+    max-width: 100%;
+    border: 3px solid #e6ccd1;
+    margin-bottom: 10px;
+  }
+  
+  .blog-details h3 {
+    margin: 0;
+    color: #f4c2d8; /* Highlight important title */
+  }
+  
+  /* Galleries */
+  .galleries {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .gallery-button {
+    background-color: #e6ccd1; /* Washed-out pink */
+    color: black;
+    border: 3px solid #d3d3d3;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin: 10px;
+    text-transform: uppercase;
+    border-radius: 0; /* Boxy buttons */
+    transition: transform 0.2s;
+  }
+  
+  .gallery-button:hover {
+    transform: scale(1.05);
+  }
+  
+  .gallery {
+    display: none;
+    margin-top: 10px;
+  }
+  
+  .gallery img {
+    width: 100px;
+    margin: 5px;
+    border: 3px solid #d3d3d3;
+    transition: transform 0.2s, opacity 0.2s;
+  }
+  
+  .gallery img:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+  
+  /* Projects */
+  .projects {
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.9);
+    border: 3px solid #e6ccd1;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 800px;
+  }
+  
+  .project {
+    margin-bottom: 20px;
+  }
+  
+  .project img {
+    width: 100%;
+    max-width: 300px;
+    border: 3px solid #e6ccd1;
+    margin-bottom: 10px;
+  }
+  
+  .project a {
+    color: #f4c2d8; /* Important pink for links */
+    text-decoration: none;
+  }
+  
+  .project a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Contact Section */
+  .contact {
+    text-align: left;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.9);
+    border: 3px solid #e6ccd1;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 800px;
+  }
+  
+  .contact p {
+    color: #d3d3d3;
+  }
+  
+  .contact strong {
+    color: #f4c2d8; /* Highlight important username */
+  }
+  
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #202020;
+    color: #d3d3d3;
+    border-top: 3px solid #e6ccd1;
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes popIn {
+    from {
+      transform: scale(0.8);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideIn {
+    from {
+      transform: translateX(-50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
