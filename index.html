@@ -10,9 +10,11 @@
 <body>
   <header>
     <div class="profile-container">
-      <img src="profile.jpg" alt="pfp" class="profile-pic">
+      <div class="avHolder">
+        <img src="profile.jpg" alt="Profile Picture" id="avatar" />
+      </div>
       <div class="bio">
-        <h1>Lady</h1>
+        <h1 id="name" data-text="Lady">Lady</h1>
         <p>I consider myself humane</p>
       </div>
     </div>
@@ -22,29 +24,33 @@
     <section class="blog">
       <h2>Latest Blog Post</h2>
       <div class="blog-container">
-        <img src="https://t3.ftcdn.net/jpg/04/95/48/12/360_F_495481232_AdnT7iXu5Q1HIrcgmRjrBwrqE32i1rgu.jpg" alt="image" class="blog-image">
+        <img src="https://t3.ftcdn.net/jpg/04/95/48/12/360_F_495481232_AdnT7iXu5Q1HIrcgmRjrBwrqE32i1rgu.jpg" alt="Blog Image" class="blog-image">
         <div class="blog-details">
           <h3>Finished making the site</h3>
           <p><strong>Date:</strong> November 18, 2024</p>
-          <p><strong>Mood:</strong> happy!</p>
-          <p>finished coding and integrating! pls enjoy</p>
+          <p><strong>Mood:</strong> Happy!</p>
+          <p>Finished coding and integrating! Please enjoy.</p>
         </div>
       </div>
     </section>
 
     <section class="galleries">
       <h2>Galleries</h2>
-      <button class="gallery-button" onclick="toggleGallery('hall')">Hall of Retards</button>
-      <div id="hall" class="gallery">
-        <img src="image1.jpg" alt="Funny Meme 1">
-        <img src="image2.jpg" alt="Funny Meme 2">
-        <img src="image3.jpg" alt="Funny Meme 3">
+      <div class="gallery-section">
+        <button class="gallery-button" onclick="toggleGallery('hall')">Hall of Retards</button>
+        <div id="hall" class="gallery">
+          <img src="image1.jpg" alt="Funny Meme 1">
+          <img src="image2.jpg" alt="Funny Meme 2">
+          <img src="image3.jpg" alt="Funny Meme 3">
+        </div>
       </div>
-      <button class="gallery-button" onclick="toggleGallery('media')">Media Dump</button>
-      <div id="media" class="gallery">
-        <img src="random1.jpg" alt="Random Media 1">
-        <img src="random2.jpg" alt="Random Media 2">
-        <img src="random3.jpg" alt="Random Media 3">
+      <div class="gallery-section">
+        <button class="gallery-button" onclick="toggleGallery('media')">Media Dump</button>
+        <div id="media" class="gallery">
+          <img src="random1.jpg" alt="Random Media 1">
+          <img src="random2.jpg" alt="Random Media 2">
+          <img src="random3.jpg" alt="Random Media 3">
+        </div>
       </div>
     </section>
 
@@ -73,7 +79,7 @@
   <script>
     function toggleGallery(id) {
       const gallery = document.getElementById(id);
-      gallery.style.display = gallery.style.display === 'none' ? 'block' : 'none';
+      gallery.classList.toggle('active');
     }
   </script>
 </body>
