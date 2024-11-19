@@ -3,84 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lady</title>
+  <title>Lady's Cyber Space</title>
   <link rel="stylesheet" href="styles.css">
-  <link rel="icon" href="fav.ico" type="image/x-icon">
+  <script>
+    async function fetchGeoInfo() {
+      const response = await fetch('https://ipapi.co/json/');
+      const data = await response.json();
+      document.getElementById('geo-info').innerHTML = `
+        IP: ${data.ip} <br>
+        Location: ${data.city}, ${data.region}, ${data.country_name} 
+      `;
+    }
+    document.addEventListener('DOMContentLoaded', fetchGeoInfo);
+  </script>
 </head>
 <body>
-  <header>
-    <div class="profile-container">
-      <div class="avHolder">
-        <img src="profile.jpg" alt="Profile Picture" id="avatar" />
+  <div class="terminal">
+    <div class="background-image"></div>
+    <div class="content">
+      <div class="profile">
+        <img src="profile.jpg" alt="Lady's Profile Picture" class="profile-picture">
+        <h1 style="color: #e6a2b3;">Lady</h1>
+        <p class="bio">I like cybersec stuff!</p>
       </div>
-      <div class="bio">
-        <h1 id="name" data-text="Lady">Lady</h1>
-        <p>I consider myself humane</p>
+
+      <div id="geo-info" class="bio">
+        <p>Loading your IP and location info...</p>
       </div>
+
+      <div class="social-icons">
+        <a href="https://discord.com" title="Connect on Discord" style="color: #e6a2b3;">
+          Discord: ladyluvzu
+        </a>
+      </div>
+      <p style="font-size: 1.5rem;">>:)</p>
     </div>
-  </header>
-
-  <main>
-    <section class="blog">
-      <h2>Latest Blog Post</h2>
-      <div class="blog-container">
-        <img src="https://t3.ftcdn.net/jpg/04/95/48/12/360_F_495481232_AdnT7iXu5Q1HIrcgmRjrBwrqE32i1rgu.jpg" alt="Blog Image" class="blog-image">
-        <div class="blog-details">
-          <h3>Finished making the site</h3>
-          <p><strong>Date:</strong> November 18, 2024</p>
-          <p><strong>Mood:</strong> Happy!</p>
-          <p>Finished coding and integrating! Please enjoy.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="galleries">
-      <h2>Galleries</h2>
-      <div class="gallery-section">
-        <button class="gallery-button" onclick="toggleGallery('hall')">Hall of Retards</button>
-        <div id="hall" class="gallery">
-          <img src="image1.jpg" alt="Funny Meme 1">
-          <img src="image2.jpg" alt="Funny Meme 2">
-          <img src="image3.jpg" alt="Funny Meme 3">
-        </div>
-      </div>
-      <div class="gallery-section">
-        <button class="gallery-button" onclick="toggleGallery('media')">Media Dump</button>
-        <div id="media" class="gallery">
-          <img src="random1.jpg" alt="Random Media 1">
-          <img src="random2.jpg" alt="Random Media 2">
-          <img src="random3.jpg" alt="Random Media 3">
-        </div>
-      </div>
-    </section>
-
-    <section class="projects">
-      <h2>Projects</h2>
-      <div class="project">
-        <img src="project1.jpg" alt="Project Thumbnail">
-        <p>Small description of the project. <a href="project1.html">Learn more.</a></p>
-      </div>
-      <div class="project">
-        <img src="project2.jpg" alt="Project Thumbnail">
-        <p>Another project overview. <a href="project2.html">Learn more.</a></p>
-      </div>
-    </section>
-
-    <section class="contact">
-      <h2>Contact</h2>
-      <p>Discord: <strong>ladyluvzu</strong></p>
-    </section>
-  </main>
-
-  <footer>
-    <p>Copyright 2024 LadyLuvzU</p>
-  </footer>
-
-  <script>
-    function toggleGallery(id) {
-      const gallery = document.getElementById(id);
-      gallery.classList.toggle('active');
-    }
-  </script>
+  </div>
 </body>
 </html>
