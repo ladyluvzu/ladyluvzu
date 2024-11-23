@@ -5,15 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lady</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="favicon.ico" type="image/x-icon"> <!-- Favicon -->
 
   <!-- Open Graph Meta Tags -->
   <meta property="og:title" content="Lady">
   <meta property="og:description" content="Click my site babes! <3">
-  <meta property="og:image" content="profile.jpg">
-  <meta property="og:url" content="https://ladyluvzu.fun"> <!-- Replace with your actual site URL -->
+  <meta property="og:image" content="https://files.catbox.moe/cbdy25.jpg">
+  <meta property="og:url" content="https://ladyluvzu.fun">
   <meta property="og:type" content="website">
 
-  <!-- Discord Embed Color -->
   <meta name="theme-color" content="#e6a2b3">
 
   <script>
@@ -24,11 +24,21 @@
         IP: ${data.ip} <br>
         Location: ${data.city}, ${data.region}, ${data.country_name} 
       `;
+      document.getElementById('disclaimer').innerHTML = `
+        <small><a href="https://github.com/ladyluvzu/ladyluvzu" target="_blank">THIS IS YOUR LOCATION AND IP, I DO NOT LOG THIS. REFERENCE ALL SOURCE CODE AT GitHub Repo</a></small>
+      `;
     }
     document.addEventListener('DOMContentLoaded', fetchGeoInfo);
   </script>
 </head>
 <body>
+  <!-- Top Bar Navigation -->
+  <div class="top-bar">
+    <a href="index.html">Home</a>
+    <a href="bio.html">Bio</a>
+    <a href="hallofskids.html">Hall of Skids</a>
+  </div>
+
   <div class="terminal">
     <div class="background-image"></div>
     <div class="content">
@@ -36,11 +46,14 @@
         <img src="profile.jpg" alt="Lady's Profile Picture" class="profile-picture">
         <h1 style="color: #e6a2b3;">Lady</h1>
         <p class="bio">I like cybersec stuff! </p>
+        <a href="bio.html" style="color: #e6a2b3;">Read more...</a>
       </div>
 
       <div id="geo-info" class="bio">
         <p>Loading your IP and location info...</p>
       </div>
+
+      <div id="disclaimer"></div>
 
       <div class="social-icons">
         <a href="https://discord.com" title="Connect on Discord" style="color: #e6a2b3;">

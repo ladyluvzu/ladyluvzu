@@ -19,6 +19,30 @@ body {
   background-position: center;
 }
 
+/* Top Bar */
+.top-bar {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  background-color: rgba(17, 17, 17, 0.7); /* Semi-transparent */
+  padding: 0.5rem 0; /* Thinner */
+  text-align: center;
+  z-index: 10;
+}
+
+.top-bar a {
+  text-decoration: none;
+  color: #e6a2b3;
+  margin: 0 15px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.top-bar a:hover {
+  color: #FFF;
+}
+
 /* Terminal Frame */
 .terminal {
   position: relative;
@@ -119,5 +143,21 @@ body {
 }
 
 .social-icons a:hover {
+  color: #FFF;
+}
+
+/* Disclaimer */
+#disclaimer {
+  margin-top: 1rem;
+  color: #AAA;
+  font-size: 0.8rem;
+}
+
+#disclaimer a {
+  color: #e6a2b3;
+  text-decoration: none;
+}
+
+#disclaimer a:hover {
   color: #FFF;
 }
