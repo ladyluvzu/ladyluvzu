@@ -7,40 +7,55 @@
 
 /* Page Styling */
 body {
-  background-color: #000;
-  color: #FFF;
-  font-family: "Courier New", Courier, monospace;
+  background-image: url('background.jpg'); /* Use a background image */
+  background-size: cover;
+  background-position: center;
+  color: #333; /* Default text color */
+  font-family: "Courier New", Courier, monospace; /* Monospace font */
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-image: url('background.jpg');
-  background-size: cover;
-  background-position: center;
+  overflow: hidden; /* Prevent scrolling */
 }
 
-/* Top Bar */
-.top-bar {
-  position: absolute;
+/* Overlay */
+.overlay {
+  position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
-  background-color: rgba(17, 17, 17, 0.7); /* Semi-transparent */
-  padding: 0.5rem 0; /* Thinner */
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8); /* Black with 80% opacity */
+  color: #f4c3d7; /* Soft pink text */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure it appears above everything */
+  transition: opacity 1s ease, visibility 1s ease; /* Smooth fade-out */
+  cursor: url('cursor.cur'), auto; /* Custom cursor */
+}
+
+.overlay-content {
   text-align: center;
-  z-index: 10;
 }
 
-.top-bar a {
-  text-decoration: none;
-  color: #e6a2b3;
-  margin: 0 15px;
+.overlay-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #f4c3d7; /* Match overlay text color */
+}
+
+.overlay-content p {
   font-size: 1.2rem;
-  font-weight: bold;
-  transition: color 0.3s;
+  margin-bottom: 1.5rem;
 }
 
-.top-bar a:hover {
-  color: #FFF;
+/* Hidden state for overlay */
+.overlay.hidden {
+  visibility: hidden; /* Hide the overlay */
+  opacity: 0; /* Fully transparent */
+  pointer-events: none; /* Disable interactions */
 }
 
 /* Terminal Frame */
@@ -48,12 +63,20 @@ body {
   position: relative;
   width: 80%;
   max-width: 600px;
-  background-color: #111;
+  background-color: rgba(255, 228, 225, 0.9); /* Light pink background */
   padding: 2rem;
-  border-radius: 5px;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
-  overflow: hidden;
-  animation: fadeIn 2s ease-in-out;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  opacity: 0; /* Initially hidden */
+  pointer-events: none; /* Prevent interaction until fade-in */
+  transform: translateY(20px); /* Start slightly below */
+  transition: opacity 1s ease, transform 1s ease; /* Smooth fade-in */
+}
+
+.terminal.fade-in {
+  opacity: 1; /* Fully visible */
+  pointer-events: all; /* Enable interaction */
+  transform: translateY(0); /* Move into place */
 }
 
 /* Background Image Overlay */
@@ -63,36 +86,15 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url('background.jpg');
-  background-size: cover;
-  background-position: center;
-  opacity: 0.05;
-  z-index: 1;
-  animation: opacityShift 10s infinite alternate;
-}
-
-@keyframes opacityShift {
-  0% { opacity: 0.05; }
-  100% { opacity: 0.15; }
-}
-
-/* Fade-in Animation */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  background-color: rgba(255, 255, 255, 0.1); /* Light white overlay */
+  z-index: 1; /* Behind the main content */
 }
 
 /* Content Styling */
 .content {
   position: relative;
-  z-index: 2;
+  z-index: 2; /* Above background image */
   text-align: center;
-  animation: slideInTop 1.5s ease-in-out;
-}
-
-@keyframes slideInTop {
-  from { opacity: 0; transform: translateY(-30px); }
-  to { opacity: 1; transform: translateY(0); }
 }
 
 /* Profile Section */
@@ -106,58 +108,24 @@ body {
   height: 100px;
   border-radius: 50%;
   margin-bottom: 0.5rem;
-  border: 2px solid #FFF;
-  animation: pulse 5s infinite;
-}
-
-@keyframes pulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.05); }
+  border: 2px solid #f4c3d7; /* Soft pink border */
 }
 
 /* Bio Text */
-.bio p {
+.bio {
   margin: 0.5rem 0;
   line-height: 1.5;
-  color: #CCC;
-  animation: textFadeIn 2s ease-in-out;
-}
-
-@keyframes textFadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  color: #666; /* Grey text */
 }
 
 /* Social Icons */
-.social-icons {
-  margin-top: 1rem;
-  display: flex;
-  justify-content: center;
-}
-
 .social-icons a {
-  text-decoration: none;
-  color: #e6a2b3;
+  text-decoration: none; /* Remove underline */
+  color: #f4c3d7; /* Soft pink */
   font-size: 1.2rem;
-  transition: color 0.3s;
+  transition: color 0.3s; /* Smooth hover transition */
 }
 
 .social-icons a:hover {
-  color: #FFF;
-}
-
-/* Disclaimer */
-#disclaimer {
-  margin-top: 1rem;
-  color: #AAA;
-  font-size: 0.8rem;
-}
-
-#disclaimer a {
-  color: #e6a2b3;
-  text-decoration: none;
-}
-
-#disclaimer a:hover {
-  color: #FFF;
+  color: #333; /* Dark grey on hover */
 }

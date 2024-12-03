@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lady</title>
+  <title></title>
   <link rel="stylesheet" href="styles.css">
-  <link rel="icon" href="favicon.ico" type="image/x-icon"> <!-- Favicon -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
 
   <!-- Open Graph Meta Tags -->
   <meta property="og:title" content="Lady">
@@ -14,54 +14,72 @@
   <meta property="og:url" content="https://ladyluvzu.fun">
   <meta property="og:type" content="website">
 
-  <meta name="theme-color" content="#e6a2b3">
+  <meta name="theme-color" content="#f4c3d7">
 
   <script>
-    async function fetchGeoInfo() {
-      const response = await fetch('https://ipapi.co/json/');
-      const data = await response.json();
-      document.getElementById('geo-info').innerHTML = `
-        IP: ${data.ip} <br>
-        Location: ${data.city}, ${data.region}, ${data.country_name} 
-      `;
-      document.getElementById('disclaimer').innerHTML = `
-        <small><a href="https://github.com/ladyluvzu/ladyluvzu" target="_blank">THIS IS YOUR LOCATION AND IP, I DO NOT LOG THIS. REFERENCE ALL SOURCE CODE AT GitHub Repo</a></small>
-      `;
+    const titleText = "''Just then did the girl really feel love.''  ";
+    let titleArray = titleText.split(" ");
+    let index = 0;
+
+    function updateTitle() {
+      document.title = titleArray.join(" ");
+      titleArray.push(titleArray.shift());
     }
-    document.addEventListener('DOMContentLoaded', fetchGeoInfo);
+
+    setInterval(updateTitle, 1000);
+
+    function enterSite() {
+      const overlay = document.getElementById('overlay');
+      const content = document.querySelector('.terminal');
+      overlay.style.opacity = '0';
+      overlay.style.pointerEvents = 'none';
+      content.classList.add('fade-in');
+      
+      const audio = new Audio('music.mp3');
+      audio.play();
+    }
   </script>
 </head>
 <body>
-  <!-- Top Bar Navigation -->
-  <div class="top-bar">
-    <a href="index.html">Home</a>
-    <a href="bio.html">Bio</a>
-    <a href="hallofskids.html">Hall of Skids</a>
+  <!-- Full-page overlay -->
+  <div id="overlay" class="overlay" onclick="enterSite()">
+    <div class="overlay-content">
+      <p>Click anywhere to enter</p>
+    </div>
   </div>
 
+  <!-- Main content -->
   <div class="terminal">
     <div class="background-image"></div>
     <div class="content">
       <div class="profile">
         <img src="profile.jpg" alt="Lady's Profile Picture" class="profile-picture">
-        <h1 style="color: #e6a2b3;">Lady</h1>
-        <p class="bio">I like cybersec stuff! </p>
-        <a href="bio.html" style="color: #e6a2b3;">Read more...</a>
+        <h1 style="color: #f4c3d7;">Lady</h1>
+        <p class="bio">I like cybersec stuff!</p>
       </div>
-
-      <div id="geo-info" class="bio">
-        <p>Loading your IP and location info...</p>
-      </div>
-
-      <div id="disclaimer"></div>
 
       <div class="social-icons">
-        <a href="https://discord.com" title="Connect on Discord" style="color: #e6a2b3;">
+        <a href="https://discord.com" title="Connect on Discord" style="color: #f4c3d7;">
           Discord: ladyluvzu
         </a>
       </div>
       <p style="font-size: 1.5rem;">>:)</p>
     </div>
   </div>
+
+  <script>
+    function enterSite() {
+      const overlay = document.getElementById('overlay');
+      const content = document.querySelector('.terminal');
+
+      overlay.style.opacity = '0'; // Start fade-out animation
+      overlay.style.pointerEvents = 'none'; // Disable interactions on the overlay
+      overlay.style.visibility = 'hidden'; // Ensure it's invisible but remains in the DOM
+      content.classList.add('fade-in'); // Fade-in the main content
+
+      const audio = new Audio('music.mp3');
+      audio.play();
+    }
+  </script>
 </body>
 </html>
