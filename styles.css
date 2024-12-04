@@ -17,6 +17,7 @@ body {
   align-items: center;
   min-height: 100vh;
   overflow: hidden; /* Prevent scrolling */
+  cursor: url('cursor.cur'), auto; /* Custom cursor */
 }
 
 /* Overlay */
