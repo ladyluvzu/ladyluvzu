@@ -3,16 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title></title>
+  <title>Lady's Portfolio</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
-
-  <!-- Open Graph Meta Tags -->
-  <meta property="og:title" content="Lady">
-  <meta property="og:description" content="Click my site babes! <3">
-  <meta property="og:image" content="https://files.catbox.moe/cbdy25.jpg">
-  <meta property="og:url" content="https://ladyluvzu.fun">
-  <meta property="og:type" content="website">
 
   <meta name="theme-color" content="#f4c3d7">
 
@@ -38,6 +31,15 @@
       const audio = new Audio('music.mp3');
       audio.play();
     }
+
+    function toggleBio() {
+      const bio = document.querySelector('.expanded-bio');
+      const aboutMe = document.querySelector('.bio-container');
+      const portfolio = document.querySelector('.portfolio-container');
+      
+      aboutMe.classList.toggle('show');
+      portfolio.classList.toggle('fade-in');
+    }
   </script>
 </head>
 <body>
@@ -56,30 +58,41 @@
         <img src="profile.jpg" alt="Lady's Profile Picture" class="profile-picture">
         <h1 style="color: #f4c3d7;">Lady</h1>
         <p class="bio">I like cybersec stuff!</p>
+        <button class="expand-bio-btn" onclick="toggleBio()">More About Me</button>
+        
+        <div class="bio-container">
+          <p class="expanded-bio">I am a passionate cybersecurity enthusiast, with a particular interest in ethical hacking, malware analysis, and reverse engineering. I enjoy exploring and exploiting vulnerabilities in software to help make the digital world a safer place. I have worked with various tools such as Kali Linux, Metasploit, and Ghidra. In my spare time, I contribute to open-source security projects and love to share my knowledge with others.</p>
+        </div>
       </div>
 
-      <div class="social-icons">
-        <a href="https://discord.gg/AEPFkcAhtB" title="Join my discord server!" style="color: #f4c3d7;">
-          Discord: ladyluvzu
-        </a>
-      </div>
-      <p style="font-size: 1.5rem;">>:)</p>
+      <!-- Portfolio Section (under About Me) -->
+      <section id="portfolio" class="portfolio-container">
+        <h2 class="portfolio-title">Portfolio</h2>
+        <p class="portfolio-description">Here are some of the projects and works I've contributed to, ranging from open-source projects to personal research in cybersecurity and software development.</p>
+
+        <div class="project">
+          <h3>Project Title 1</h3>
+          <p class="project-description">This project is about...</p>
+          <a href="#" class="btn">View Details</a>
+        </div>
+
+        <div class="project">
+          <h3>Project Title 2</h3>
+          <p class="project-description">This project focuses on...</p>
+          <a href="#" class="btn">View Details</a>
+        </div>
+
+        <div class="project">
+          <h3>Project Title 3</h3>
+          <p class="project-description">A brief overview of...</p>
+          <a href="#" class="btn">View Details</a>
+        </div>
+
+        <div class="more-projects">
+          <a href="https://github.com/ladyprojects" class="btn">View More Projects</a>
+        </div>
+      </section>
     </div>
   </div>
-
-  <script>
-    function enterSite() {
-      const overlay = document.getElementById('overlay');
-      const content = document.querySelector('.terminal');
-
-      overlay.style.opacity = '0'; // Start fade-out animation
-      overlay.style.pointerEvents = 'none'; // Disable interactions on the overlay
-      overlay.style.visibility = 'hidden'; // Ensure it's invisible but remains in the DOM
-      content.classList.add('fade-in'); // Fade-in the main content
-
-      const audio = new Audio('music.mp3');
-      audio.play();
-    }
-  </script>
 </body>
 </html>
