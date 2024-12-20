@@ -6,7 +6,7 @@
 }
 
 body {
-  background-image: url('dance.gif'); /* Change to the local dance.gif file */
+  background-image: url('dance.gif'); /* Background gif */
   background-size: cover; /* Ensures the background covers the entire screen */
   background-position: center; /* Centers the image */
   color: #333;
@@ -16,7 +16,19 @@ body {
   align-items: center;
   min-height: 100vh;
   overflow: hidden;
+  position: relative;  /* Ensures visualizer stays behind content */
   cursor: url('cursor.cur'), auto;
+}
+
+/* Audio Visualizer Canvas */
+canvas#visualizer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;  /* Keep it behind the profile and overlay */
+  display: block;
+  width: 100vw;
+  height: 100vh;
 }
 
 /* Overlay */
@@ -49,7 +61,7 @@ body {
   position: relative;
   width: 80%;
   max-width: 900px;
-  background-color: rgba(204, 255, 204, 0.9); /* Changed from light pink to light green */
+  background-color: rgba(204, 255, 204, 0.9); /* Light green */
   padding: 2rem;
   border-radius: 10px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
@@ -89,7 +101,7 @@ body {
   height: 100px;
   border-radius: 50%;
   margin-bottom: 0.5rem;
-  border: 2px solid #a8e6a3; /* Changed from pink to green */
+  border: 2px solid #a8e6a3; /* Green border */
 }
 
 .bio {
