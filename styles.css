@@ -5,11 +5,10 @@
   box-sizing: border-box;
 }
 
-/* Page Styling */
 body {
   background-image: url('https://files.catbox.moe/cr4hvq.gif');
-  background-size: cover;
-  background-position: center;
+  background-size: cover; /* Ensures the background image covers the entire screen */
+  background-position: center; /* Centers the background image */
   color: #333;
   font-family: "Courier New", Courier, monospace;
   display: flex;
@@ -18,6 +17,7 @@ body {
   min-height: 100vh;
   overflow: hidden;
   cursor: url('cursor.cur'), auto;
+}
 }
 
 /* Overlay */
