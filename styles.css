@@ -6,7 +6,6 @@
 }
 
 body {
-  background-color: #fff; /* You can keep this or remove it if you want the GIF to cover the whole body */
   color: #333;
   font-family: "Courier New", Courier, monospace;
   display: flex;
@@ -77,6 +76,7 @@ body {
   background-size: cover; /* Ensures the background covers the entire screen */
   background-position: center; /* Centers the image */
   z-index: 1;
+  background-color: transparent; /* Remove or make background fully transparent */
 }
 
 .content {
