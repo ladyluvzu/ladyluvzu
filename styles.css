@@ -6,7 +6,7 @@
 }
 
 body {
-  background-image: url('https://files.catbox.moe/cr4hvq.gif');
+  background-image: url('https://files.catbox.moe/cr4hvq.gif'); /* Updated to GIF link */
   background-size: cover; /* Ensures the background image covers the entire screen */
   background-position: center; /* Centers the background image */
   color: #333;
@@ -17,7 +17,6 @@ body {
   min-height: 100vh;
   overflow: hidden;
   cursor: url('cursor.cur'), auto;
-}
 }
 
 /* Overlay */
