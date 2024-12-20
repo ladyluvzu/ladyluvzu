@@ -1,61 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lady</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
-  <meta name="theme-color" content="#a8e6a3"> 
-
-  <script>
-    const titleText = "''Theres a million things I could say, but you never really knew I felt this way.''  ";
-    let titleArray = titleText.split(" ");
-    let index = 0;
-
-    function updateTitle() {
-      document.title = titleArray.join(" ");
-      titleArray.push(titleArray.shift());
-    }
-
-    setInterval(updateTitle, 1000);
-
-    function enterSite() {
-      const overlay = document.getElementById('overlay');
-      const content = document.querySelector('.terminal');
-      overlay.style.opacity = '0';
-      overlay.style.pointerEvents = 'none';
-      content.classList.add('fade-in');
-      
-      const audio = new Audio('music.mp3');
-      audio.play();
-    }
-
-    function toggleBio() {
-      const bio = document.querySelector('.expanded-bio');
-      const aboutMe = document.querySelector('.bio-container');
-      const portfolio = document.querySelector('.portfolio-container');
-      
-      aboutMe.classList.toggle('show');
-      portfolio.classList.toggle('fade-in');
-    }
-  </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lady</title>
+    <link rel="stylesheet" href="ladystyles.css">
 </head>
 <body>
-  <div id="overlay" class="overlay" onclick="enterSite()">
-    <div class="overlay-content">
-      <p>Click anywhere to enter</p>
-    </div>
-  </div>
+    <!-- Audio Visualizer Canvas -->
+    <canvas id="visualizer"></canvas>
 
-  <div class="terminal">
-    <div class="content">
-      <div class="profile">
-        <img src="profile.jpg" alt="Lady's Profile Picture" class="profile-picture">
-        <h1 style="color: #a8e6a3;">Lady</h1> 
-        <p class="bio">I like cybersec stuff!</p>
-      </div>
+    <!-- Overlay that appears before entering the site -->
+    <div class="overlay" id="overlay">
+        <div class="overlay-content">
+            <p>Click to Enter</p>
+        </div>
     </div>
-  </div>
+
+    <!-- Bio Section -->
+    <div class="bio-container">
+        <div class="bio-content">
+            <img src="ladypfp.jpg" alt="Profile Picture" class="pfp">
+            <h1>Lady</h1>
+            <p class="bio">Heyoo! I'm Lady, the real ecriminal!!!!!</p>
+        </div>
+    </div>
+
+    <!-- Audio Element -->
+    <audio id="audio" preload="auto">
+        <source src="lady.mp3" type="audio/mp3">
+    </audio>
+
+    <script src="ladyvisualizer.js"></script>
+    <script>
+        // Handle overlay click and audio play
+        const overlay = document.getElementById('overlay');
+        const audio = document.getElementById('audio');
+        
+        overlay.addEventListener('click', () => {
+            overlay.style.display = 'none';  // Hide overlay
+            audio.play();  // Start playing audio
+        });
+    </script>
 </body>
 </html>
