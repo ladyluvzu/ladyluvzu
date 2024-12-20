@@ -28,7 +28,7 @@ body {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.8);
-  color: #f4c3d7;
+  color: #a8e6a3; /* Changed from pink to green */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -50,7 +50,7 @@ body {
   position: relative;
   width: 80%;
   max-width: 900px;
-  background-color: rgba(255, 228, 225, 0.9);
+  background-color: rgba(204, 255, 204, 0.9); /* Changed from light pink to light green */
   padding: 2rem;
   border-radius: 10px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
@@ -99,7 +99,7 @@ body {
   height: 100px;
   border-radius: 50%;
   margin-bottom: 0.5rem;
-  border: 2px solid #f4c3d7;
+  border: 2px solid #a8e6a3; /* Changed from pink to green */
 }
 
 .bio {
@@ -109,7 +109,7 @@ body {
 }
 
 .expand-bio-btn {
-  background-color: #f4c3d7;
+  background-color: #a8e6a3; /* Changed from pink to green */
   border: none;
   padding: 0.5rem 1rem;
   margin-top: 1rem;
@@ -120,7 +120,7 @@ body {
 }
 
 .expand-bio-btn:hover {
-  background-color: #e4b8d7;
+  background-color: #80d38f; /* Lighter green on hover */
 }
 
 .bio-container {
@@ -147,7 +147,7 @@ body {
 
 .portfolio-title {
   font-size: 2rem;
-  color: #f4c3d7;
+  color: #a8e6a3; /* Changed from pink to green */
   margin-bottom: 1rem;
 }
 
@@ -158,7 +158,7 @@ body {
 }
 
 .project {
-  background-color: rgba(255, 228, 225, 0.8);
+  background-color: rgba(204, 255, 204, 0.8); /* Changed from pink to light green */
   padding: 1.5rem;
   border-radius: 10px;
   margin-bottom: 2rem;
@@ -167,7 +167,7 @@ body {
 
 .project h3 {
   font-size: 1.8rem;
-  color: #f4c3d7;
+  color: #a8e6a3; /* Changed from pink to green */
   margin-bottom: 0.5rem;
 }
 
@@ -178,7 +178,7 @@ body {
 }
 
 .project .btn {
-  background-color: #f4c3d7;
+  background-color: #a8e6a3; /* Changed from pink to green */
   border: none;
   padding: 0.5rem 1rem;
   color: white;
@@ -188,7 +188,7 @@ body {
 }
 
 .project .btn:hover {
-  background-color: #e4b8d7;
+  background-color: #80d38f; /* Lighter green on hover */
 }
 
 .more-projects {
@@ -197,7 +197,7 @@ body {
 }
 
 .more-projects .btn {
-  background-color: #f4c3d7;
+  background-color: #a8e6a3; /* Changed from pink to green */
   border: none;
   padding: 0.5rem 1rem;
   color: white;
@@ -206,7 +206,7 @@ body {
 }
 
 .more-projects .btn:hover {
-  background-color: #e4b8d7;
+  background-color: #80d38f; /* Lighter green on hover */
 }
 
 /* Animations */
